@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta name="viewport" content="initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!-- Angulars Material CSS using RawGit to load directly from `bower-material/master` -->
+    <link rel="stylesheet" href="//rawgit.com/angular/bower-material/master/angular-material.css">
+
+    <link href="/css/global.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Angular Material Dependencies -->
+    <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.js"></script>
+
+    <!-- Angular Material Javascript using RawGit to load directly from `bower-material/master` -->
+    <script src="//rawgit.com/angular/bower-material/master/angular-material.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js"></script>
+
+    <script src="/js/app.js"></script>
+</head>
+<body ng-app="sett-site">
+    <div layout="row" ng-controller="side-nav-controller">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+            <md-toolbar>
+                <a href="/">
+                    <h1 class="md-toolbar-tools">Sett Imaginarium</h1>
+                </a>
+            </md-toolbar>
+            <md-content class="md-padding" ng-controller="side-nav-controller">
+                <a href="/projects.html">
+                    <h1 class="md-toolbar-tools">Projects</h1>
+                </a>
+                <a href="/pattern-builder">
+                    <h1 class="md-toolbar-tools">Pattern Builder</h1>
+                </a>
+            </md-content>
+        </md-sidenav>
+        <md-content id="page-content">
+            <md-toolbar>
+                <h2 class="md-toolbar-tools">
+                    <md-button hide-gt-md ng-click="openLeftMenu()">
+                        <i class="fa fa-bars"></i>
+                    </md-button>
+                    <span>Welcome to the Imaginarium</span>
+                </h2>
+            </md-toolbar>
+            <div layout="row" class="article" ng-model="article" style="background: url(' https://d1w5usc88actyi.cloudfront.net/wp-content/uploads/2013/01/RTJ_8231-Edit.jpg') no-repeat left center; background-size: cover">
+                <div flex="30" flex-sm="50" class="image-overlay">
+                    <h1>Imagination!</h1>
+                    <p>It's what we're made of...</p>
+                    <md-button class="md-raised md-accent" href="">Read more</md-button>
+                </div>
+            </div>
+        </md-content>
+    </div>
+</body>
+</html>
