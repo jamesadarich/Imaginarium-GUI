@@ -30,12 +30,12 @@
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
             <md-toolbar>
                 <a href="/">
-                    <h1 class="md-toolbar-tools">Sett</h1>
+                    <h1 class="md-toolbar-tools">Menu</h1>
                 </a>
             </md-toolbar>
             <md-content class="md-padding" ng-controller="side-nav-controller">
                 <a href="/blog.html">
-                    <h1 class="md-toolbar-tools">Blog</h1>
+                    <h1 class="md-toolbar-tools">Pallette</h1>
                 </a>
             </md-content>
         </md-sidenav>
@@ -45,16 +45,10 @@
                     <md-button hide-gt-md ng-click="openLeftMenu()">
                         <i class="fa fa-bars"></i>
                     </md-button>
-                    <span>Get Sett!!!</span>
+                    <span>Pattern Builder</span>
                 </h2>
             </md-toolbar>
-            <div layout="row" class="article" ng-model="article" style="background: url(' https://d1w5usc88actyi.cloudfront.net/wp-content/uploads/2013/01/RTJ_8231-Edit.jpg') no-repeat left center; background-size: cover">
-                <div flex="30" flex-sm="50" class="image-overlay">
-                    <h1>Imagination!</h1>
-                    <p>It's what we're made of...</p>
-                    <md-button class="md-raised md-accent" href="">Read more</md-button>
-                </div>
-            </div>
+            <svg id="pattern-canvas"></svg>
         </md-content>
     </div>
 </body>
