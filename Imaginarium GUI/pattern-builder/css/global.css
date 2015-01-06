@@ -1,0 +1,9 @@
+﻿#page-content {
+    width: 100%;
+}
+
+.image-overlay {
+    background-color: rgba(33,150,243, 0.5);
+    padding: 10px;
+    color: #fff;
+}

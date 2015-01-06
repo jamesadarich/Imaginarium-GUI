@@ -65,9 +65,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\global.css" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
     <Content Include="pattern-builder\app.html" />
+    <Content Include="pattern-builder\css\global.css" />
     <Content Include="pattern-builder\index.html" />
     <Content Include="pattern-builder\js\app.js" />
     <Content Include="Web.config" />
@@ -76,7 +78,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
     <Folder Include="templates\" />
   </ItemGroup>
   <PropertyGroup>
