@@ -8,10 +8,11 @@
     document.getElementById('pattern-canvas').appendChild(el);
 }
 
-for (var i = 0; i < 10; i++)
+$(document).ready()
 {
-    for (var j = 0; j < 10; j++)
-    {
-        createRectangle(15 * j + 10, 15 * i + 10);
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            createRectangle(15 * j + 10, 15 * i + 10);
+        }
     }
 }
