@@ -5,6 +5,9 @@
     el.setAttribute('height', 10);
     el.setAttribute('width', 10);
     el.setAttribute('fill', 'rgb(0,0,0)');
+    $(el).click(function () {
+        el.setAttribute('fill', 'rgb(255,0,0)');
+    });
     document.getElementById('pattern-canvas').appendChild(el);
 }
 
