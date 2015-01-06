@@ -7,3 +7,7 @@
     padding: 10px;
     color: #fff;
 }
+
+#app-container{
+    min-height: 100%;
+}
