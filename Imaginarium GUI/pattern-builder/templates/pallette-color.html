@@ -1,4 +1,6 @@
-﻿<div>
-    <div ng-click="editColor(color)">Edit</div>
-    <div class="color-pallette" style="background-color: rgb({{color.red}},{{color.green}},{{color.blue}});" ng-click="selectColor(color)"></div>
+﻿<div layout="row">
+    <div flex="20">
+        <i class="fa fa-pencil fa-2x" ng-click="editColor(color)" style="margin-top:15px"></i>
+    </div>
+    <div flex="80" class="color-pallette" style="background-color: rgb({{color.red}},{{color.green}},{{color.blue}});" ng-click="selectColor(color)"></div>
 </div>

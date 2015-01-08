@@ -30,14 +30,10 @@
     <div id=" app-container" layout="row" ng-controller="side-nav-controller">
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
         <md-toolbar>
-            <a href="/">
-                <h1 class="md-toolbar-tools">Menu</h1>
-            </a>
+            <h2 class="md-toolbar-tools">Menu</h2>
         </md-toolbar>
         <md-content class="md-padding" ng-controller="side-nav-controller">
-            <a href="/blog.html">
-                <h1 class="md-toolbar-tools">Pallette</h1>
-            </a>
+            <span>Pallette</span>
             <div ng-repeat="color in pallette" class="color-pallette" ng-include="'templates/pallette-color.html'"></div>
         </md-content>
     </md-sidenav>
