@@ -39,12 +39,13 @@
     </md-sidenav>
     <md-content id="page-content">
         <md-toolbar>
-            <h2 class="md-toolbar-tools">
+            <div class="md-toolbar-tools">
                 <md-button hide-gt-md ng-click="openLeftMenu()">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-bars fa-2x"></i>
                 </md-button>
-                <span>Pattern Builder</span>
-            </h2>
+                <h2>Pattern Builder</h2>
+                <div id="selected-color" ng-model="selectedColor" style="background-color: rgb({{selectedColor.red}},{{selectedColor.green}},{{selectedColor.blue}});"></div>
+            </div>
         </md-toolbar>
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" id="pattern-canvas">
