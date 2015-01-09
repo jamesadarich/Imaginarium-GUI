@@ -38,31 +38,12 @@ function createRow(squares, defaultColor) {
     return row;
 }
 
-function createColor(red, green, blue) {
-    var c = {};
-    c.red = red;
-    c.green = green;
-    c.blue = blue;
-    c.rgbstring = 'rgb(' + red + ',' + green + ',' + blue + ')';
-    return c;
-}
-
-
-
 app.controller('pattern-builder-controller', function ($scope, $mdDialog) {
 
-
-    $scope.defaultColor = createColor(0, 0, 0);
-
-    var pallette = [];
-    pallette.push(createColor(255, 0, 0));
-    pallette.push(createColor(0, 255, 0));
-    pallette.push(createColor(0, 0, 255));
-
-
-    $scope.selectedColor = pallette[0];
-
-    $scope.pallette = pallette;
+    $scope.defaultColor = {}
+    $scope.defaultColor.red = 0;
+    $scope.defaultColor.green = 0;
+    $scope.defaultColor.blue = 0;
 
     var grid = {};
     grid.rows = [];
@@ -79,37 +60,39 @@ app.controller('pattern-builder-controller', function ($scope, $mdDialog) {
 
     
     $scope.$watch('gridInfo.rowCount', function () {
-        var currentRowCount = $scope.grid.rows.length;
+        var rows = $scope.grid.rows;
+        var currentRowCount = rows.length;
         var newRowCount = $scope.gridInfo.rowCount;
 
         if (currentRowCount < newRowCount) {
-            for (var i = $scope.grid.rows.length; i < newRowCount; i++) {
-                $scope.grid.rows.push(createRow($scope.gridInfo.columnCount, $scope.defaultColor));
+            for (var i = rows.length; i < newRowCount; i++) {
+                rows.push(createRow($scope.gridInfo.columnCount, $scope.defaultColor));
             }
         }
         else {
             for (var i = currentRowCount; i > newRowCount; i--) {
-                $scope.grid.rows.pop($scope.grid.rows[i - 1]);
+                rows.pop();
             }
         }
     });
 
     $scope.$watch('gridInfo.columnCount', function () {
-        var currentColumnCount = $scope.grid.rows[0].squares.length;
+        var rows = $scope.grid.rows;
+        var currentColumnCount = rows[0].squares.length;
         var newColumnCount = $scope.gridInfo.columnCount;
         var rowCount = $scope.gridInfo.rowCount;
 
         if (currentColumnCount < newColumnCount) {
             for (var i = currentColumnCount; i < newColumnCount; i++) {
                 for (var j = 0; j < rowCount; j++) {
-                    $scope.grid.rows[j].squares.push(createSquare($scope.defaultColor));
+                    rows[j].squares.push(createSquare($scope.defaultColor));
                 }
             }
         }
         else {
             for (var i = currentColumnCount; i > newColumnCount; i--) {
                 for (var j = 0; j < rowCount; j++) {
-                    $scope.grid.rows[j].squares.pop($scope.grid.rows[j].squares[i - 1]);
+                    rows[j].squares.pop();
                 }
             }
         }
@@ -123,6 +106,18 @@ app.controller('pattern-builder-controller', function ($scope, $mdDialog) {
         else {
             square.color = $scope.selectedColor;
         }
+    }
+
+    $scope.newColor = function () {
+        var color = {};
+        color.red = Math.floor(Math.random() * 256);
+        color.green = Math.floor(Math.random() * 256);
+        color.blue = Math.floor(Math.random() * 256);
+        $scope.pallette.push(color);
+    }
+
+    $scope.removeColor = function (color) {
+        $scope.pallette.splice($scope.pallette.indexOf(color), 1);
     }
 
     $scope.selectColor = function (color) {
@@ -143,6 +138,14 @@ app.controller('pattern-builder-controller', function ($scope, $mdDialog) {
         });
         */
     }
+
+    var pallette = [];
+
+    $scope.pallette = pallette;
+    $scope.newColor();
+    $scope.newColor();
+    $scope.newColor();
+    $scope.selectedColor = pallette[0];
 
 
     function EditColorDialogController($scope, $mdDialog, color) {

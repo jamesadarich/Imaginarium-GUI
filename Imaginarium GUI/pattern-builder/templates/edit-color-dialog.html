@@ -7,6 +7,8 @@
         </md-slider>
         <md-slider flex min="0" max="255" ng-model="color.blue" aria-label="blue">
         </md-slider>
+        <span>Preview</span>
+        <div class="color-pallette" style="background-color: rgb({{color.red}},{{color.green}},{{color.blue}});"></div>
     </md-content>
     <div class="md-actions" layout="row">
         <span flex></span>

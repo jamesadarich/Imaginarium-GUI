@@ -41,12 +41,17 @@
                 <div flex="80" class="color-pallette" style="background-color: rgb({{defaultColor.red}},{{defaultColor.green}},{{defaultColor.blue}});"></div>
             </div>
             <span>Pallette</span>
-            <div ng-repeat="color in pallette" ng-include="'templates/pallette-color.html'"></div>
+            <div ng-repeat="color in pallette" ng-include="'templates/pallette-color.html'">
+                <i class="fa fa-plus fa-2x" ng-click="editColor(defaultColor)" style="margin-top:15px"></i>
+            </div>
+            <div layout layout-align="center">
+                <md-button class="md-fab md-accent" ng-click="newColor()">+</md-button>
+            </div>
             <span>Rows</span>
-            <md-slider flex min="1" max="25" ng-model="gridInfo.rowCount" aria-label="row count">
+            <md-slider md-discrete flex min="1" max="25" ng-model="gridInfo.rowCount" aria-label="row count">
             </md-slider>
             <span>Columns</span>
-            <md-slider flex min="1" max="25" ng-model="gridInfo.columnCount" aria-label="column count">
+            <md-slider md-discrete flex min="1" max="25" ng-model="gridInfo.columnCount" aria-label="column count">
             </md-slider>
         </md-content>
     </md-sidenav>
