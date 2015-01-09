@@ -33,8 +33,21 @@
             <h2 class="md-toolbar-tools">Menu</h2>
         </md-toolbar>
         <md-content class="md-padding" ng-controller="side-nav-controller">
+            <span>Default Color</span>
+            <div layout="row">
+                <div flex="20">
+                    <i class="fa fa-pencil fa-2x" ng-click="editColor(defaultColor)" style="margin-top:15px"></i>
+                </div>
+                <div flex="80" class="color-pallette" style="background-color: rgb({{defaultColor.red}},{{defaultColor.green}},{{defaultColor.blue}});"></div>
+            </div>
             <span>Pallette</span>
-            <div ng-repeat="color in pallette" class="color-pallette" ng-include="'templates/pallette-color.html'"></div>
+            <div ng-repeat="color in pallette" ng-include="'templates/pallette-color.html'"></div>
+            <span>Rows</span>
+            <md-slider flex min="1" max="25" ng-model="gridInfo.rowCount" aria-label="row count">
+            </md-slider>
+            <span>Columns</span>
+            <md-slider flex min="1" max="25" ng-model="gridInfo.columnCount" aria-label="column count">
+            </md-slider>
         </md-content>
     </md-sidenav>
     <md-content id="page-content">
@@ -49,7 +62,7 @@
         </md-toolbar>
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" id="pattern-canvas">
-                <rect ng-repeat="square in grid.rows[0].squares" ng-attr-x="{{(square.col * 25)}}" ng-attr-y="{{10}}" ng-attr-height="{{square.height}}" ng-attr-width="{{square.width}}" ng-attr-fill="rgb({{square.color.red}},{{square.color.green}},{{square.color.blue}})" ng-click="toggleColor(square)" />
+                <g ng-repeat="row in grid.rows" ng-include="'templates/rect.html'"/>
             </svg>
         </div>
     </md-content>

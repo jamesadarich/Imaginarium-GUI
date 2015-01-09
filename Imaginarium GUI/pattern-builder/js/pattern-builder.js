@@ -36,15 +36,24 @@ app.config(function ($mdThemingProvider) {
       .accentColor('green');
 });
 
-function createSquare(col, color)
-{
+function createSquare(color) {
     var square = {};
-    square.col = col;
     square.color = color;
     square.height = 20;
     square.width = 20;
 
     return square;
+}
+
+function createRow(squares, defaultColor) {
+    var row = {};
+    row.squares = [];
+
+    for (var i = 0; i < squares; i++) {
+        row.squares.push(createSquare(defaultColor));
+    }
+
+    return row;
 }
 
 function createColor(red, green, blue) {
@@ -60,6 +69,7 @@ function createColor(red, green, blue) {
 
 app.controller('pattern-builder-controller', function ($scope, $mdDialog) {
 
+
     $scope.defaultColor = createColor(0, 0, 0);
 
     var pallette = [];
@@ -72,27 +82,62 @@ app.controller('pattern-builder-controller', function ($scope, $mdDialog) {
 
     $scope.pallette = pallette;
 
-    var row = {};
-    row.squares = [];
-    row.squares.push(createSquare(1, $scope.defaultColor));
-    row.squares.push(createSquare(2, $scope.defaultColor));
-    row.squares.push(createSquare(3, $scope.defaultColor));
-    row.squares.push(createSquare(4, $scope.defaultColor));
-
     var grid = {};
     grid.rows = [];
-    grid.rows.push(row);
-    grid.rows.push(row);
-    grid.rows.push(row);
+    grid.rows.push(createRow(5, $scope.defaultColor));
+    grid.rows.push(createRow(5, $scope.defaultColor));
+    grid.rows.push(createRow(5, $scope.defaultColor));
 
     $scope.grid = grid;
+
+    var gridInfo = {};
+    gridInfo.rowCount = grid.rows.length;
+    gridInfo.columnCount = grid.rows[0].squares.length;
+    $scope.gridInfo = gridInfo;
+
+    
+    $scope.$watch('gridInfo.rowCount', function () {
+        var currentRowCount = $scope.grid.rows.length;
+        var newRowCount = $scope.gridInfo.rowCount;
+
+        if (currentRowCount < newRowCount) {
+            for (var i = $scope.grid.rows.length; i < newRowCount; i++) {
+                $scope.grid.rows.push(createRow($scope.gridInfo.columnCount, $scope.defaultColor));
+            }
+        }
+        else {
+            for (var i = currentRowCount; i > newRowCount; i--) {
+                $scope.grid.rows.pop($scope.grid.rows[i - 1]);
+            }
+        }
+    });
+
+    $scope.$watch('gridInfo.columnCount', function () {
+        var currentColumnCount = $scope.grid.rows[0].squares.length;
+        var newColumnCount = $scope.gridInfo.columnCount;
+        var rowCount = $scope.gridInfo.rowCount;
+
+        if (currentColumnCount < newColumnCount) {
+            for (var i = currentColumnCount; i < newColumnCount; i++) {
+                for (var j = 0; j < rowCount; j++) {
+                    $scope.grid.rows[j].squares.push(createSquare($scope.defaultColor));
+                }
+            }
+        }
+        else {
+            for (var i = currentColumnCount; i > newColumnCount; i--) {
+                for (var j = 0; j < rowCount; j++) {
+                    $scope.grid.rows[j].squares.pop($scope.grid.rows[j].squares[i - 1]);
+                }
+            }
+        }
+    });
 
     $scope.toggleColor = function (square) {
         if (square.color == $scope.selectedColor) {
             square.color = $scope.defaultColor;
         }
-        else
-        {
+        else {
             square.color = $scope.selectedColor;
         }
     }
