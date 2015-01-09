@@ -51,7 +51,7 @@
         </md-content>
     </md-sidenav>
     <md-content id="page-content">
-        <md-toolbar>
+        <md-toolbar id="main-tool-bar">
             <div class="md-toolbar-tools">
                 <md-button hide-gt-md ng-click="openLeftMenu()">
                     <i class="fa fa-bars fa-2x"></i>
@@ -60,11 +60,9 @@
                 <div id="selected-color" ng-model="selectedColor" style="background-color: rgb({{selectedColor.red}},{{selectedColor.green}},{{selectedColor.blue}});"></div>
             </div>
         </md-toolbar>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" id="pattern-canvas">
-                <g ng-repeat="row in grid.rows" ng-include="'templates/rect.html'"/>
-            </svg>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" id="pattern-canvas">
+            <g ng-repeat="row in grid.rows" ng-include="'templates/rect.html'"/>
+        </svg>
     </md-content>
     </div>
 </body>
