@@ -68,12 +68,15 @@
     <Content Include="css\global.css" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
+    <Content Include="pattern-builder\controllers\edit-color-dialog.js" />
+    <Content Include="pattern-builder\controllers\side-nav.js" />
     <Content Include="pattern-builder\css\pattern-builder.css" />
     <Content Include="pattern-builder\js\pattern-builder.js" />
     <Content Include="pattern-builder\app.html" />
     <Content Include="pattern-builder\css\global.css" />
     <Content Include="pattern-builder\index.html" />
     <Content Include="pattern-builder\js\app.js" />
+    <Content Include="pattern-builder\js\theme.js" />
     <Content Include="pattern-builder\templates\edit-color-dialog.html" />
     <Content Include="pattern-builder\templates\pallette-color.html" />
     <Content Include="pattern-builder\templates\rect.html" />

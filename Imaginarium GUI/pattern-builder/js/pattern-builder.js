@@ -6,17 +6,6 @@
 if (app === undefined) {
     var app = angular.module('pattern-builder', ['ngMaterial']);
 }
-app.controller('side-nav-controller', function ($scope, $mdSidenav) {
-    $scope.openLeftMenu = function () {
-        $mdSidenav('left').toggle();
-    };
-});
-
-app.config(function ($mdThemingProvider) {
-    $mdThemingProvider.theme('default')
-      .primaryColor('purple')
-      .accentColor('green');
-});
 
 function createSquare(color) {
     var square = {};
@@ -145,26 +134,5 @@ app.controller('pattern-builder-controller', function ($scope, $mdDialog) {
     $scope.newColor();
     $scope.newColor();
     $scope.newColor();
-    $scope.selectedColor = pallette[0];
-
-
-    function EditColorDialogController($scope, $mdDialog, color) {
-        $scope.color = color;
-        $scope.originalRed = color.red;
-        $scope.originalGreen = color.green;
-        $scope.originalBlue = color.blue;
-
-        $scope.hide = function () {
-            $mdDialog.hide();
-        };
-        $scope.cancel = function () {
-            $scope.color.red = $scope.originalRed;
-            $scope.color.green = $scope.originalGreen;
-            $scope.color.blue = $scope.originalBlue;
-            $mdDialog.cancel();
-        };
-        $scope.submit = function () {
-            $mdDialog.hide();
-        };
-    }
+    $scope.selectedColor = pallette[0];    
 });

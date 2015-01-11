@@ -23,7 +23,9 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js"></script>
 
-    <script src="/js/app.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="controllers/side-nav.js"></script>
 </head>
 <body ng-app="sett-site">
     <div layout="row" ng-controller="side-nav-controller">
@@ -48,11 +50,11 @@
                     <span>Get Sett!!!</span>
                 </h2>
             </md-toolbar>
-            <div layout="row" class="article" ng-model="article" style="background: url(' https://d1w5usc88actyi.cloudfront.net/wp-content/uploads/2013/01/RTJ_8231-Edit.jpg') no-repeat left center; background-size: cover">
+            <div layout="row" class="article" ng-model="article" style="background: url('http://fc06.deviantart.net/fs71/i/2013/164/6/8/hexagonal_cube_pattern_thingie_by_black_light_studio-d68vloo.png') no-repeat left center; background-size: cover; ">
                 <div flex="30" flex-sm="50" class="image-overlay">
-                    <h1>Imagination!</h1>
-                    <p>It's what we're made of...</p>
-                    <md-button class="md-raised md-accent" href="">Read more</md-button>
+                    <h1>Pattern Builder!</h1>
+                    <p>Build your own way...</p>
+                    <md-button class="md-raised md-accent" href="app.html">Try It!</md-button>
                 </div>
             </div>
         </md-content>
