@@ -1,0 +1,18 @@
+﻿<div layout="row">
+    <div flex="80">
+        <h1>{{report.PACKAGE_NAME}}</h1>
+    </div>
+    <div flex="20">
+        <i class="fa fa-minus fa-2x" ng-click="deleteReport(report)"></i>
+    </div>
+</div>
+<div layout="row">
+    <div>
+        <span>{{report.USER_CRASH_DATE}}</span>
+    </div>
+</div>
+<div layout="row">
+    <div>
+        <h1>{{report.STACK_TRACE}}</h1>
+    </div>
+</div>
