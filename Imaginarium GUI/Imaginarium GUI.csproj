@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="css\global.css" />
     <Content Include="error-reporting\reports\android.html" />
+    <Content Include="error-reporting\reports\css\global.css" />
     <Content Include="error-reporting\reports\js\android-reports.js" />
     <Content Include="error-reporting\reports\js\theme.js" />
     <Content Include="error-reporting\reports\controllers\side-nav.js" />
