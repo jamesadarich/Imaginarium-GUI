@@ -74,6 +74,10 @@
     <Content Include="error-reporting\reports\templates\android-report.html" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
+    <Content Include="legends-of-lunchtime\controllers\side-nav.js" />
+    <Content Include="legends-of-lunchtime\css\global.css" />
+    <Content Include="legends-of-lunchtime\index.html" />
+    <Content Include="legends-of-lunchtime\js\theme.js" />
     <Content Include="pattern-builder\controllers\edit-color-dialog.js" />
     <Content Include="pattern-builder\controllers\side-nav.js" />
     <Content Include="pattern-builder\css\pattern-builder.css" />
@@ -92,6 +96,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="legends-of-lunchtime\templates\" />
     <Folder Include="templates\" />
   </ItemGroup>
   <PropertyGroup>
