@@ -20,7 +20,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.7.0/angular-material.min.js"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
-    
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js"></script>
 
     <script src="js/app.js"></script>
@@ -50,21 +50,25 @@
                     <span>Legends of Lunchtime</span>
                 </h2>
             </md-toolbar>
-            <md-content>
-                <div>
-                    Welcome, fellow lunchtime adventurer!
-                </div>
-                <div layout="row" layout-wrap>
-                    <div flex="33">
-                        <h1>Noodles</h1>
-                    </div>
-                    <div flex="33">
-                        <h1>Sandwiches</h1>
-                    </div>
-                    <div flex="33">
-                        <h1>Others</h1>
-                    </div>
-                </div>
+            <md-content class="md-padding">
+                <md-input-container>
+                    <label>Title</label>
+                    <input ng-model="user.title">
+                </md-input-container>
+                <md-input-container>
+                    <label>Summary</label>
+                    <input ng-model="user.title">
+                </md-input-container>
+                <md-input-container>
+                    <label>Taste</label>
+                    <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider" class="md-warn">
+                    </md-slider>
+                </md-input-container>
+                <md-input-container>
+                    <label>Packaging</label>
+                    <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider" class="md-warn">
+                    </md-slider>
+                </md-input-container>
             </md-content>
         </md-content>
     </div>

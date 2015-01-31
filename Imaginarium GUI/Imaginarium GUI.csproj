@@ -74,6 +74,13 @@
     <Content Include="error-reporting\reports\templates\android-report.html" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
+    <Content Include="legends-of-lunchtime\admin\controller\side-nav.js" />
+    <Content Include="legends-of-lunchtime\admin\css\global.css" />
+    <Content Include="legends-of-lunchtime\admin\dashboard.html" />
+    <Content Include="legends-of-lunchtime\admin\js\app.js" />
+    <Content Include="legends-of-lunchtime\admin\js\theme.js" />
+    <Content Include="legends-of-lunchtime\admin\login.html" />
+    <Content Include="legends-of-lunchtime\admin\review.html" />
     <Content Include="legends-of-lunchtime\controllers\side-nav.js" />
     <Content Include="legends-of-lunchtime\css\global.css" />
     <Content Include="legends-of-lunchtime\index.html" />
