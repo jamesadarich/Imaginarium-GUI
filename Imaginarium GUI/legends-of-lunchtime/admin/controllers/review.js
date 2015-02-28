@@ -21,6 +21,15 @@
         }
     }
 
+    $scope.submitReview = function()
+    {
+        $http.post('/someUrl', $scope.review).
+        success(function (data, status, headers, config) {
+      // this callback will be called asynchronously
+      // when the response is available
+         });
+    }
+
     loadAll();
     // ******************************
     // Internal methods
@@ -52,4 +61,6 @@
             return (productType.Name.toLowerCase().indexOf(lowercaseQuery) !== -1);
         };
     }
+
+    
 });
