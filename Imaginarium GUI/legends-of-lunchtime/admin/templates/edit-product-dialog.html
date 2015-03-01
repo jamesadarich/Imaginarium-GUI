@@ -1,0 +1,30 @@
+﻿<md-dialog aria-label="Edit Product {{selectedProduct.Name}}">
+    <md-content>
+        <md-subheader class="md-sticky-no-effect">Edit Product {{selectedProduct.Name}}</md-subheader>
+        <md-input-container>
+            <label>Name</label>
+            <input ng-model="selectedProduct.Name">
+        </md-input-container>
+        <md-autocomplete md-selected-item="selectedProduct.Brand"
+                         md-search-text="brandSearchText"
+                         md-items="brand in brandSearch(brandSearchText)"
+                         md-item-text="brand.Name"
+                         placeholder="Select Brand...">
+            <span md-highlight-text="searchText">{{brand.Name}}</span>
+        </md-autocomplete>
+        <br />
+        <md-autocomplete md-selected-item="selectedProduct.Type"
+                         md-search-text="productTypeSearchText"
+                         md-items="productType in productTypeSearch(productTypeSearchText)"
+                         md-item-text="productType.Name"
+                         md-selected-item-change="updateRatings()"
+                         placeholder=" select product type...">
+            <span md-highlight-text="searchText">{{productType.Name}}</span>
+        </md-autocomplete>
+    </md-content>
+    <div class="md-actions" layout="row">
+        <md-button ng-click="saveProduct()" class="md-primary">
+            Save
+        </md-button>
+    </div>
+</md-dialog>

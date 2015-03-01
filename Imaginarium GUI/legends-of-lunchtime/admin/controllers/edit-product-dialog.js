@@ -1,9 +1,6 @@
-﻿app.controller('ReviewCtrl', function ($scope, $http) {
-    var self = this;
-    // list of `state` value/display objects
-    var review = {};
+﻿var editProductDialogController = function ($scope, $http, $mdDialog, $mdToast, selectedProduct) {
 
-    $scope.review = review;
+    $scope.selectedProduct = selectedProduct;
     $scope.productTypes = [];
     $scope.brands = [];
     $scope.selectedProductType = null;
@@ -13,59 +10,55 @@
     $scope.productTypeSearch = productTypeSearch;
     $scope.brandSearch = brandSearch;
 
-    $scope.updateRatings = function () {
-        $scope.review.Ratings = [];
-        if ($scope.review.Product.Type !== undefined && $scope.review.Product.Type !== null) {
-            for (var i = 0; i < $scope.review.Product.Type.RatingTypes.length; i++) {
-                var rating = {};
-                rating.Value = 0;
-                rating.Type = $scope.review.Product.Type.RatingTypes[i];
-                $scope.review.Ratings.push(rating);
-            }
+    $scope.saveBrand = function () {
+        if ($scope.selectedProduct.Id === null || $scope.selectedProduct.Id === undefined) {
+            var httpMethod = $http.post;
         }
-    }
+        else {
+            var httpMethod = $http.put;
+        }
 
-    $scope.submitReview = function()
-    {
-        $http.post('http://api.imaginarium.getsett.net/legends-of-lunchtime/review',
-                    $scope.review,
+        httpMethod('http://api.imaginarium.getsett.net/legends-of-lunchtime/product',
+                    $scope.selectedProduct,
                     { headers: { 'Authorization': token.token_type + ' ' + token.access_token } }).
         success(function (data, status, headers, config) {
-      // this callback will be called asynchronously
-      // when the response is available
+            $mdToast.show(
+                $mdToast.simple()
+                .content(data.Name + ' saved!')
+                .position('top left right')
+                .hideDelay(3000)
+            );
         })
         .error(function (data, status, headers, config) {
 
             $mdToast.show(
                 $mdToast.simple()
-                .content(data.error_description)
+                .content(status + ': ' + JSON.stringify(data))
                 .position('top left right')
                 .hideDelay(3000)
             );
         });
+
+        $scope.hide = function () {
+            $mdDialog.hide();
+        };
+        $scope.cancel = function () {
+            $mdDialog.cancel();
+        };
     }
 
-    loadAll();
-    // ******************************
-    // Internal methods
-    // ******************************
-    /**
-     * Search for states... use $timeout to simulate
-     * remote dataservice call.
-     */
     function productTypeSearch(query) {
         var results = query ? $scope.productTypes.filter(createFilterFor(query)) : [],
             deferred;
         return results;
     }
+
     function brandSearch(query) {
         var results = query ? $scope.brands.filter(createFilterFor(query)) : [],
             deferred;
         return results;
     }
-    /**
-     * Build `states` list of key/value pairs
-     */
+
     function loadAll() {
         $http.get('http://api.imaginarium.getsett.net/legends-of-lunchtime/product-types')
             .success(function (data, status, headers, config) {
@@ -87,5 +80,5 @@
         };
     }
 
-    
-});
+    loadAll();
+}
