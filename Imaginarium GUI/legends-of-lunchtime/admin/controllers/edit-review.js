@@ -2,7 +2,7 @@
     var self = this;
     // list of `state` value/display objects
     var review = {};
-    review.Title = "Test";
+    review.Title = null;
     $scope.review = review;
     $scope.productTypes = [];
     $scope.selectedProductType = null;
@@ -23,11 +23,22 @@
 
     $scope.submitReview = function()
     {
-        $http.post('/someUrl', $scope.review).
+        $http.post('http://api.imaginarium.getsett.net/legends-of-lunchtime/review',
+                    $scope.review,
+                    { headers: { 'Authorization': token.token_type + ' ' + token.access_token } }).
         success(function (data, status, headers, config) {
       // this callback will be called asynchronously
       // when the response is available
-         });
+        })
+        .error(function (data, status, headers, config) {
+
+            $mdToast.show(
+                $mdToast.simple()
+                .content(data.error_description)
+                .position('top left right')
+                .hideDelay(3000)
+            );
+        });
     }
 
     loadAll();

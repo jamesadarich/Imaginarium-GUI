@@ -51,19 +51,11 @@
                 </h2>
             </md-toolbar>
             <md-content>
-                <div>
-                    Welcome, fellow lunchtime adventurer!
+                <div ng-repeat="review in reviews">
+                    {{review.Title}}
                 </div>
-                <div layout="row" layout-wrap>
-                    <div flex="33">
-                        <h1>Noodles</h1>
-                    </div>
-                    <div flex="33">
-                        <h1>Sandwiches</h1>
-                    </div>
-                    <div flex="33">
-                        <h1>Others</h1>
-                    </div>
+                <div>
+                    <md-button class="md-fab md-accent" aria-label="Use Android" ng-href="edit-review.html">+</md-button>
                 </div>
             </md-content>
         </md-content>

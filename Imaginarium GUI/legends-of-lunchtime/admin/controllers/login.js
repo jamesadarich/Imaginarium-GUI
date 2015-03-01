@@ -1,4 +1,4 @@
-﻿app.controller('login-controller', function ($scope, $http) {
+﻿app.controller('login-controller', function ($scope, $http, $mdToast) {
     $scope.usename = null;
     $scope.password = null;
 
@@ -9,10 +9,17 @@
                     data,
                     { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })            
         .success(function (data, status, headers, config) {
-            console.log(data);
+            localStorage.setItem('token', JSON.stringify(data));
+            window.location.replace('/legends-of-lunchtime/admin/dashboard.html');
         })
         .error(function (data, status, headers, config) {
-            console.log(status + ": " + data);
+
+            $mdToast.show(
+                $mdToast.simple()
+                .content(data.error_description)
+                .position('top left right')
+                .hideDelay(3000)
+            );
         });
 
     }
