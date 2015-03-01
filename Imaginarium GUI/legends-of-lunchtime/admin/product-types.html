@@ -67,7 +67,9 @@
             </md-toolbar>
             <md-content ng-controller="product-type-controller">
                 <div ng-repeat="productType in productTypes" layout="row">
-                    <div flex="80"><h1>{{productType.Name}}</h1></div><div flex="20"><i class="fa fa-pencil" style="font-size:40px" ng-click="editProductType(productType)"></i></div>
+                    <div flex="80"><h1>{{productType.Name}}</h1></div>
+                    <div flex="10"><i class="fa fa-pencil" style="font-size:40px" ng-click="editProductType(productType)"></i></div>
+                    <div flex="10"><i class="fa fa-close" style="font-size:40px" ng-click="deleteProductType(productType)">X</i></div>
                 </div>
                 <div>
                     <md-button class="md-fab md-accent" aria-label="New Product Type" ng-click="newProductType()">+</md-button>

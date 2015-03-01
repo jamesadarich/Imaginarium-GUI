@@ -66,8 +66,10 @@
                 </h2>
             </md-toolbar>
             <md-content ng-controller="rating-type-controller">
-                <div ng-repeat="ratingType in ratingTypes">
-                    <div flex="80"><h1>{{ratingType.Name}}</h1></div><div flex="20"><i class="fa fa-pencil" style="font-size:40px" ng-click="editRatingType(ratingType)"></i></div>
+                <div ng-repeat="ratingType in ratingTypes" layout="row">
+                    <div flex="80"><h1>{{ratingType.Name}}</h1></div>
+                    <div flex="10"><i class="fa fa-pencil" style="font-size:40px" ng-click="editRatingType(ratingType)"></i></div>
+                    <div flex="10"><i class="fa fa-close" style="font-size:40px" ng-click="deleteRatingType(ratingType)">X</i></div>
                 </div>
                 <div>
                     <md-button class="md-fab md-accent" aria-label="New Rating Type" ng-click="newRatingType()">+</md-button>
