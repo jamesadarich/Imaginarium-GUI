@@ -74,6 +74,9 @@
     <Content Include="error-reporting\reports\templates\android-report.html" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
+    <Content Include="legends-of-lunchtime\admin\brands.html" />
+    <Content Include="legends-of-lunchtime\admin\controllers\brands.js" />
+    <Content Include="legends-of-lunchtime\admin\controllers\edit-brand-dialog.js" />
     <Content Include="legends-of-lunchtime\admin\controllers\login.js" />
     <Content Include="legends-of-lunchtime\admin\controllers\edit-review.js" />
     <Content Include="legends-of-lunchtime\admin\controllers\side-nav.js" />
@@ -84,7 +87,11 @@
     <Content Include="legends-of-lunchtime\admin\js\token.js" />
     <Content Include="legends-of-lunchtime\admin\login.html" />
     <Content Include="legends-of-lunchtime\admin\edit-review.html" />
+    <Content Include="legends-of-lunchtime\admin\product-types.html" />
+    <Content Include="legends-of-lunchtime\admin\products.html" />
+    <Content Include="legends-of-lunchtime\admin\rating-types.html" />
     <Content Include="legends-of-lunchtime\admin\reviews.html" />
+    <Content Include="legends-of-lunchtime\admin\templates\edit-brand-dialog.html" />
     <Content Include="legends-of-lunchtime\controllers\side-nav.js" />
     <Content Include="legends-of-lunchtime\css\global.css" />
     <Content Include="legends-of-lunchtime\index.html" />

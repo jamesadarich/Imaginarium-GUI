@@ -2,7 +2,7 @@
     var self = this;
     // list of `state` value/display objects
     var review = {};
-    review.Title = null;
+
     $scope.review = review;
     $scope.productTypes = [];
     $scope.selectedProductType = null;

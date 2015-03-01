@@ -25,7 +25,10 @@
 
     <script src="js/app.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/token.js"></script>
     <script src="controllers/side-nav.js"></script>
+    <script src="controllers/brands.js"></script>
+    <script src="controllers/edit-brand-dialog.js"></script>
 </head>
 <body ng-app="legends-of-lunchtime">
     <div layout="row" ng-controller="side-nav-controller">
@@ -62,20 +65,12 @@
                     <span>Legends of Lunchtime</span>
                 </h2>
             </md-toolbar>
-            <md-content>
-                <div>
-                    Welcome, fellow lunchtime adventurer!
+            <md-content ng-controller="brand-controller">
+                <div ng-repeat="brand in brands">
+                    {{brand.Name}}
                 </div>
-                <div layout="row" layout-wrap>
-                    <div flex="33">
-                        <h1>Noodles</h1>
-                    </div>
-                    <div flex="33">
-                        <h1>Sandwiches</h1>
-                    </div>
-                    <div flex="33">
-                        <h1>Others</h1>
-                    </div>
+                <div>
+                    <md-button class="md-fab md-accent" aria-label="New Brand" ng-click="newBrand()">+</md-button>
                 </div>
             </md-content>
         </md-content>
