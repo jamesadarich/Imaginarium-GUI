@@ -32,7 +32,13 @@
                     { headers: { 'Authorization': token.token_type + ' ' + token.access_token } }).
         success(function (data, status, headers, config) {
       // this callback will be called asynchronously
-      // when the response is available
+            // when the response is available
+            $mdToast.show(
+                $mdToast.simple()
+                .content(data.Product.Brand.Name + ' ' + data.Product.Name + ' review saved successfully')
+                .position('top left right')
+                .hideDelay(3000)
+            );
         })
         .error(function (data, status, headers, config) {
 
