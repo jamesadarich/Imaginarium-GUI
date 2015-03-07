@@ -7,7 +7,7 @@
     <!-- Angulars Material CSS using RawGit to load directly from `bower-material/master` -->
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.7.0/angular-material.min.css">
 
-    <link href="css/global.css" rel="stylesheet">
+    <link href="/css/global.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Angular Material Dependencies -->
@@ -20,36 +20,48 @@
     <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.7.0/angular-material.min.js"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
-
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js"></script>
 
-    <script src="js/dot-net-reports.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/theme.js"></script>
     <script src="controllers/side-nav.js"></script>
 </head>
-<body ng-app="dot-net-reports" ng-controller="dot-net-reports-controller">
-    <div id="app-container" layout="row" ng-controller="side-nav-controller">
+<body ng-app="legends-of-lunchtime">
+    <div layout="row" ng-controller="side-nav-controller">
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
             <md-toolbar>
-                <h2 class="md-toolbar-tools">Menu</h2>
+                <a href="/">
+                    <h1 class="md-toolbar-tools">LoL</h1>
+                </a>
             </md-toolbar>
             <md-content class="md-padding" ng-controller="side-nav-controller">
-                <a href="android.html"><h2>Android</h2></a>
-                <a href="dot-net.html"><h2>.net</h2></a>
+                <a href="/blog.html">
+                    <h1 class="md-toolbar-tools">Blog</h1>
+                </a>
             </md-content>
         </md-sidenav>
         <md-content id="page-content">
-            <md-toolbar id="main-tool-bar">
-                <div class="md-toolbar-tools">
+            <md-toolbar>
+                <h2 class="md-toolbar-tools">
                     <md-button hide-gt-md ng-click="openLeftMenu()">
-                        <i class="fa fa-bars fa-2x"></i>
+                        <i class="fa fa-bars"></i>
                     </md-button>
-                    <h2>.net Reports</h2>
-                </div>
+                    <span>Legends of Lunchtime</span>
+                </h2>
             </md-toolbar>
-            <div id="error-reports">
-                <div ng-repeat="report in reports" ng-include="'templates/dot-net-report.html'" />
-            </div>
+            <md-content ng-controller="review-summary-controller">
+                <div>
+                    Welcome, fellow lunchtime adventurer!
+                </div>
+                <div layout="row" layout-wrap>
+                    <div ng-repeat="review in reviews">
+                        <h1>{{review.Title}}</h1>
+                        <p>{{review.Product.Brand.Name}} - {{review.Product.Name}}</p>
+                        <p>{{review.Summary}}</p>
+                    </div>
+                </div>
+            </md-content>
         </md-content>
     </div>
 </body>

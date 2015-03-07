@@ -104,8 +104,10 @@
     <Content Include="legends-of-lunchtime\admin\templates\edit-product-type-dialog.html" />
     <Content Include="legends-of-lunchtime\admin\templates\edit-product-dialog.html" />
     <Content Include="legends-of-lunchtime\admin\templates\edit-brand-dialog.html" />
+    <Content Include="legends-of-lunchtime\controllers\review-summary.js" />
     <Content Include="legends-of-lunchtime\controllers\side-nav.js" />
     <Content Include="legends-of-lunchtime\css\global.css" />
+    <Content Include="legends-of-lunchtime\reviews.html" />
     <Content Include="legends-of-lunchtime\index.html" />
     <Content Include="legends-of-lunchtime\js\app.js" />
     <Content Include="legends-of-lunchtime\js\theme.js" />
