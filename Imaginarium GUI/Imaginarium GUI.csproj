@@ -66,12 +66,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\global.css" />
-    <Content Include="error-reporting\reports\android.html" />
-    <Content Include="error-reporting\reports\css\global.css" />
-    <Content Include="error-reporting\reports\js\android-reports.js" />
-    <Content Include="error-reporting\reports\js\theme.js" />
-    <Content Include="error-reporting\reports\controllers\side-nav.js" />
-    <Content Include="error-reporting\reports\templates\android-report.html" />
+    <Content Include="error-reaper\reports\dot-net.html" />
+    <Content Include="error-reaper\reports\android.html" />
+    <Content Include="error-reaper\reports\css\global.css" />
+    <Content Include="error-reaper\reports\js\dot-net-reports.js" />
+    <Content Include="error-reaper\reports\js\android-reports.js" />
+    <Content Include="error-reaper\reports\js\theme.js" />
+    <Content Include="error-reaper\reports\controllers\side-nav.js" />
+    <Content Include="error-reaper\reports\templates\dot-net-report.html" />
+    <Content Include="error-reaper\reports\templates\android-report.html" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
     <Content Include="legends-of-lunchtime\admin\brands.html" />

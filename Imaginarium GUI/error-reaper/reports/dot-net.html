@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta name="viewport" content="initial-scale=1">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!-- Angulars Material CSS using RawGit to load directly from `bower-material/master` -->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.7.0/angular-material.min.css">
+
+    <link href="css/global.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Angular Material Dependencies -->
+    <script src="//cdn.jsdelivr.net/hammerjs/2.0.4/hammer.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.js"></script>
+
+    <!-- Angular Material Javascript using RawGit to load directly from `bower-material/master` -->
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.7.0/angular-material.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js"></script>
+
+    <script src="js/dot-net-reports.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="controllers/side-nav.js"></script>
+</head>
+<body ng-app="dot-net-reports" ng-controller="dot-net-reports-controller">
+    <div id="app-container" layout="row" ng-controller="side-nav-controller">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+            <md-toolbar>
+                <h2 class="md-toolbar-tools">Menu</h2>
+            </md-toolbar>
+            <md-content class="md-padding" ng-controller="side-nav-controller">
+                <span>Default Color</span>
+            </md-content>
+        </md-sidenav>
+        <md-content id="page-content">
+            <md-toolbar id="main-tool-bar">
+                <div class="md-toolbar-tools">
+                    <md-button hide-gt-md ng-click="openLeftMenu()">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </md-button>
+                    <h2>Dot Net Reports</h2>
+                </div>
+            </md-toolbar>
+            <div id="error-reports">
+                <div ng-repeat="report in reports" ng-include="'templates/dot-net-report.html'" />
+            </div>
+        </md-content>
+    </div>
+</body>
+</html>
