@@ -49,7 +49,7 @@
 
             $mdToast.show(
                 $mdToast.simple()
-                .content(data.error_description)
+                .content(JSON.stringify(data))
                 .position('top left right')
                 .hideDelay(3000)
             );
