@@ -37,14 +37,14 @@
                 .hideDelay(3000)
             );
         });
-
-        function loadAll() {
-            $http.get('http://api.imaginarium.getsett.net/legends-of-lunchtime/product-types')
-                .success(function (data, status, headers, config) {
-                    $scope.productTypes = data;
-                });
-        }
-
-        loadAll();
     }
+
+    function loadAll() {
+        $http.get('http://api.imaginarium.getsett.net/legends-of-lunchtime/product-types')
+            .success(function (data, status, headers, config) {
+                $scope.productTypes = data;
+            });
+    }
+
+    loadAll();
 });
