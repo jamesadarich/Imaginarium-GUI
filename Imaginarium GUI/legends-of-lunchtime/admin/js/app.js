@@ -7,5 +7,5 @@ if (app === undefined) {
 }
 
 function handleUnauthorized() {
-    window.href = '/legends-of-lunchtime/admin/login.html';
+    document.location.href = '/legends-of-lunchtime/admin/login.html';
 }
