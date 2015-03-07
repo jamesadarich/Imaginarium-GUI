@@ -42,6 +42,11 @@
         })
         .error(function (data, status, headers, config) {
 
+            if (status === 401)
+            {
+                handleUnauthorized();
+            }
+
             $mdToast.show(
                 $mdToast.simple()
                 .content(data.error_description)

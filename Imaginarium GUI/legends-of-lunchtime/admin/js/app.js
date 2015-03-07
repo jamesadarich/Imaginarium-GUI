@@ -5,3 +5,7 @@
 if (app === undefined) {
     var app = angular.module('legends-of-lunchtime', ['ngMaterial']);
 }
+
+function handleUnauthorized() {
+    window.href = '/legends-of-lunchtime/admin/login.html';
+}
