@@ -1,4 +1,4 @@
-﻿app.controller('ReviewCtrl', function ($scope, $http) {
+﻿app.controller('ReviewCtrl', function ($scope, $http, $mdToast) {
     var self = this;
     // list of `state` value/display objects
     var review = {};

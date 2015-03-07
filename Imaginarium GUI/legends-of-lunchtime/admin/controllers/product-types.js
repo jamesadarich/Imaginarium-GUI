@@ -16,7 +16,7 @@
             locals: { selectedProductType: productType }
         });
     }
-    
+
     $scope.deleteProductType = function (productType) {
         $http.delete('http://api.imaginarium.getsett.net/legends-of-lunchtime/product-type/' + productType.Id,
                     { headers: { 'Authorization': token.token_type + ' ' + token.access_token } })
@@ -38,12 +38,13 @@
             );
         });
 
-    function loadAll() {
-        $http.get('http://api.imaginarium.getsett.net/legends-of-lunchtime/product-types')
-            .success(function (data, status, headers, config) {
-                $scope.productTypes = data;
-            });
-    }
+        function loadAll() {
+            $http.get('http://api.imaginarium.getsett.net/legends-of-lunchtime/product-types')
+                .success(function (data, status, headers, config) {
+                    $scope.productTypes = data;
+                });
+        }
 
-    loadAll();
+        loadAll();
+    }
 });
