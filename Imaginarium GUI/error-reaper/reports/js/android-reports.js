@@ -4,7 +4,7 @@
 
 app.controller('android-reports-controller', function ($scope, $mdDialog) {
 
-    $.get('http://api.imaginarium.getsett.net/error-reporting/reports/android')
+    $.get('http://api.imaginarium.getsett.net/error-reporting/reports/android?take=20&sort=CrashDate desc')
     .success(function (reports) {
         $scope.reports = reports;
     });
