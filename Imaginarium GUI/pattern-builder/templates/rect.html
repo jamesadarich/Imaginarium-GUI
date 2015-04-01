@@ -1,1 +1,0 @@
-﻿<rect ng-repeat="square in row.squares" ng-model="square" ng-attr-x="{{grid.rows[grid.rows.indexOf(row)].squares.indexOf(square) * 25 + 5}}" ng-attr-y="{{grid.rows.indexOf(row) * 25 + 5}}" ng-attr-height="{{square.height}}" ng-attr-width="{{square.width}}" ng-attr-fill="rgb({{square.color.red}},{{square.color.green}},{{square.color.blue}})" ng-click="toggleColor(square)" />
