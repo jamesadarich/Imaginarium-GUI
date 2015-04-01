@@ -1,0 +1,22 @@
+﻿<md-dialog aria-label="Edit Color">
+    <md-content>
+        <md-subheader class="md-sticky-no-effect">Edit Color</md-subheader>
+        <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red">
+        </md-slider>
+        <md-slider flex min="0" max="255" ng-model="color.green" aria-label="green">
+        </md-slider>
+        <md-slider flex min="0" max="255" ng-model="color.blue" aria-label="blue">
+        </md-slider>
+        <span>Preview</span>
+        <div class="color-pallette" style="background-color: rgb({{color.red}},{{color.green}},{{color.blue}});"></div>
+    </md-content>
+    <div class="md-actions" layout="row">
+        <span flex></span>
+        <md-button ng-click="cancel()">
+            Cancel
+        </md-button>
+        <md-button ng-click="submit()" class="md-primary">
+            OK
+        </md-button>
+    </div>
+</md-dialog>

@@ -1,0 +1,9 @@
+﻿<div layout="row">
+    <div flex="20">
+        <i class="fa fa-minus fa-2x" ng-click="removeColor(color)" style="margin-top:15px"></i>
+    </div>
+    <div flex="20">
+        <i class="fa fa-pencil fa-2x" ng-click="editColor(color)" style="margin-top:15px"></i>
+    </div>
+    <div flex="60" class="color-pallette" style="background-color: rgb({{color.red}},{{color.green}},{{color.blue}});" ng-click="selectColor(color)"></div>
+</div>
