@@ -105,8 +105,8 @@ define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) 
 
 
         $mdThemingProvider.theme('default')
-            .primaryPalette('blue')
-            .accentPalette('orange');
+            .primaryPalette('deep purple')
+            .accentPalette('deep orange');
 
         $locationProvider.html5Mode(true);
     });
