@@ -1,6 +1,6 @@
 // Load modules and use them
 require.config({
-    baseUrl: '/admin/js',
+    baseUrl: '/team-builder/js',
     paths: {
         angular: '//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular',
         angularAria: '//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria',

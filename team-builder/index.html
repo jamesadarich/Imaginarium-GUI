@@ -6,9 +6,10 @@
     <meta name="description" content="{{description}}">
     <meta name="keywords" content="{{keyWords}}">
     <base href="/team-builder">
+    <link href="team-builder/css/global.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.css">
-    <script data-main="js/main.js" src="js/vendor/require.js"></script>
+    <script data-main="team-builder/js/main.js" src="team-builder/js/vendor/require.js"></script>
 </head>
 <body ng-controller="body">
     <div class="overlay" ng-hide="isLoaded">
@@ -20,13 +21,10 @@
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
             <md-toolbar class="md-toolbar-tools">
                 <a href="/">
-                    <h1 class="md-toolbar-tools">Sett</h1>
+                    <h1>Team Builder</h1>
                 </a>
             </md-toolbar>
             <md-content class="md-padding">
-                <a href="/blog">
-                    <h1 class="md-toolbar-tools">Blog</h1>
-                </a>
             </md-content>
         </md-sidenav>
         <md-content id="page-content">

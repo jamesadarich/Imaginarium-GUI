@@ -92,21 +92,21 @@ define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) 
 
     app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
 
-        $routeProvider.when("/", angularAMD.route({
-            templateUrl: 'templates/controllers/random-teams.html',
+        $routeProvider.when("/team-builder/", angularAMD.route({
+            templateUrl: 'team-builder/templates/controllers/random-teams.html',
             controller: 'random-teams',
             controllerUrl: 'controllers/random-teams'
         }))
         .otherwise(angularAMD.route({
-            templateUrl: 'templates/controllers/file-not-found.html',
+            templateUrl: 'team-builder/templates/controllers/file-not-found.html',
             controller: 'file-not-found',
             controllerUrl: 'controllers/file-not-found'
         }));
 
 
         $mdThemingProvider.theme('default')
-            .primaryPalette('deep purple')
-            .accentPalette('deep orange');
+            .primaryPalette('deep-purple')
+            .accentPalette('deep-orange');
 
         $locationProvider.html5Mode(true);
     });

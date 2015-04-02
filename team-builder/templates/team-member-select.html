@@ -1,0 +1,5 @@
+<div ng-repeat="user in users" flex="33" flex-sm="50" >
+  <md-checkbox ng-model="user.isSelected" aria-label="Select User">
+    {{user.LastName + ', ' + user.FirstName}}
+  </md-checkbox>
+</div>
