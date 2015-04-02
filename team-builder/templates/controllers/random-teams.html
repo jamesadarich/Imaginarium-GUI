@@ -3,7 +3,7 @@
       Select All
     </md-checkbox>
     <div layout="row" layout-wrap ng-model="users" ng-include="'team-builder/templates/team-member-select.html'"></div>
-    <md-button class="md-raised md-accent" ng-click="generateTeams()">Generate Teams</md-button>
+    <md-button id="generate-teams" class="md-raised md-accent" ng-click="generateTeams()">Generate Teams</md-button>
     <div id="teams" layout="row">
       <div id="team-one" flex="50">
         <h1>Team One</h1>
