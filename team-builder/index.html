@@ -25,6 +25,12 @@
                 </a>
             </md-toolbar>
             <md-content class="md-padding">
+              <a href="team-builder/players">
+                <h1>Players</h1>
+              </a>
+              <a href="team-builder/matches">
+                <h1>Matches</h1>
+              </a>
             </md-content>
         </md-sidenav>
         <md-content id="page-content">
@@ -35,6 +41,9 @@
                     </md-button>
                     <span>{{title}}</span>
                 </h2>
+                <md-button class="md-fab md-accent" ng-show="toolbarFab" aria-label="Eat cake" ng-href="{{toolbarFab.href}}">
+                    <i class="{{toolbarFab.icon}}"></i>
+                </md-button>
             </md-toolbar>
             <div id="page-view" class="at-view-slide-in-right at-view-slide-out-right" ng-view></div>
         </md-content>

@@ -1,10 +1,11 @@
 define(['app'], function (app) {
 
-    app.controller('random-teams', function ($scope, $http, siteShell, searchEngineOptimiser) {
-        searchEngineOptimiser.setTitle('Team Builder - Random Teams');
+    app.controller('create-match', function ($scope, $http, siteShell, searchEngineOptimiser) {
+        searchEngineOptimiser.setTitle('Team Builder - Create Match');
         searchEngineOptimiser.setDescription('Sett is all about imagination, take a peak see!');
         searchEngineOptimiser.setKeyWords(['Sett', 'software', 'Get Sett', 'Blog', 'getsett']);
-        siteShell.setTitle('Random Teams');
+        siteShell.setTitle('Create Match');
+        siteShell.setToolbarFab(undefined);
 
         $http.get('team-builder/json/team.js')
         .success(function(users){

@@ -4,6 +4,7 @@ define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) 
 
     app.service('siteShell', function () {
         var pageTitle = '';
+        var toolbarFab = undefined;
 
         var getTitle = function () {
             return pageTitle;
@@ -13,12 +14,24 @@ define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) 
             pageTitle = title;
         }
 
+        var getToolbarFab = function () {
+            return toolbarFab;
+        }
+
+        var setToolbarFab = function (fab) {
+          toolbarFab = fab;
+        }
+
         return {
             getTitle: getTitle,
-            setTitle: setTitle
+            setTitle: setTitle,
+            getToolbarFab: getToolbarFab,
+            setToolbarFab: setToolbarFab
         };
 
     });
+
+
     app.service('searchEngineOptimiser', function () {
         var metaTitle = '';
         var metaDescription = '';
@@ -66,6 +79,11 @@ define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) 
             $scope.title = siteShell.getTitle();
         });
 
+        $scope.toolbarFab = siteShell.getToolbarFab();
+        $scope.$watch(siteShell.getToolbarFab, function (toolbarFab) {
+            $scope.toolbarFab = toolbarFab;
+        });
+
         $scope.openLeftMenu = function () {
             $mdSidenav('left').toggle();
         };
@@ -93,9 +111,24 @@ define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) 
     app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
 
         $routeProvider.when("/team-builder/", angularAMD.route({
-            templateUrl: 'team-builder/templates/controllers/random-teams.html',
-            controller: 'random-teams',
-            controllerUrl: 'controllers/random-teams'
+            templateUrl: 'team-builder/templates/controllers/dashboard.html',
+            controller: 'dashboard',
+            controllerUrl: 'controllers/dashboard'
+        }))
+        .when("/team-builder/matches", angularAMD.route({
+            templateUrl: 'team-builder/templates/controllers/matches.html',
+            controller: 'matches',
+            controllerUrl: 'controllers/matches'
+        }))
+        .when("/team-builder/players", angularAMD.route({
+            templateUrl: 'team-builder/templates/controllers/players.html',
+            controller: 'players',
+            controllerUrl: 'controllers/players'
+        }))
+        .when("/team-builder/create-match", angularAMD.route({
+            templateUrl: 'team-builder/templates/controllers/create-match.html',
+            controller: 'create-match',
+            controllerUrl: 'controllers/create-match'
         }))
         .otherwise(angularAMD.route({
             templateUrl: 'team-builder/templates/controllers/file-not-found.html',

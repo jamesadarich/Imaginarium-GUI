@@ -1,5 +1,5 @@
 # Ignore css folders
-#css/
+team-builder/css/
 .sass-cache/
 
 # npm stuff
