@@ -1,3 +1,21 @@
 <div ng-model="player">
-  <h2>{{player.FirstName}} {{player.LastName}}</h2>
+  <div ng-hide="player.editing" layout="row">
+    <h2 ng-click="player.editing = true" flex="90">{{player.FirstName}} {{player.LastName}}</h2>
+    <md-button class="md-icon-button" ng-click="deletePlayer(player)" aria-label="More" flex="10">
+      <i class="fa fa-times"></i>
+    </md-button>
+  </div>
+  <div ng-show="player.editing" layout="row">
+    <md-input-container flex="45">
+        <label>First Name</label>
+        <input ng-model="player.FirstName" ng-placeholder="First Name">
+    </md-input-container>
+    <md-input-container flex="45">
+        <label>Last Name</label>
+        <input ng-model="player.LastName" ng-placeholder="Last Name">
+    </md-input-container>
+    <md-button class="md-icon-button" ng-click="updatePlayer(player)" aria-label="More" flex="10">
+      <i class="fa fa-check"></i>
+    </md-button>
+  </div>
 </div>

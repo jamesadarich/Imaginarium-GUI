@@ -2,6 +2,8 @@ define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) 
 
     var app = angular.module('sett-site', ['ngMaterial', 'ngRoute']);
 
+    app.token = JSON.parse(localStorage.getItem('token'));
+
     app.service('siteShell', function () {
         var pageTitle = '';
         var toolbarFab = undefined;
@@ -145,7 +147,7 @@ define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) 
     });
 
     var bootstrappedApp = angularAMD.bootstrap(app);
-    bootstrappedApp.apiUrl = 'http://api.getsett.net';
+    bootstrappedApp.apiUrl = 'http://api.imaginarium.getsett.net';
 
     return bootstrappedApp;
 });

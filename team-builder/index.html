@@ -41,7 +41,7 @@
                     </md-button>
                     <span>{{title}}</span>
                 </h2>
-                <md-button class="md-fab md-accent" ng-show="toolbarFab" aria-label="Eat cake" ng-href="{{toolbarFab.href}}">
+                <md-button class="md-fab md-accent" ng-show="toolbarFab" aria-label="Eat cake"  ng-click="toolbarFab.click()" ng-href="{{toolbarFab.href}}">
                     <i class="{{toolbarFab.icon}}"></i>
                 </md-button>
             </md-toolbar>
