@@ -7,7 +7,7 @@ define(['app'], function (app) {
         siteShell.setTitle('Create Match');
         siteShell.setToolbarFab(undefined);
 
-        $http.get('team-builder/json/team.js')
+        $http.get(app.apiUrl + '/team-builder/players')
         .success(function(users){
           $scope.users = users;
         });
