@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head ng-controller="head">
+    <title>{{title}}</title>
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="{{keyWords}}">
+    <base href="/quotr">
+    <link href="quotr/css/global.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.css">
+    <script data-main="quotr/js/main.js" src="quotr/js/vendor/require.js"></script>
+</head>
+<body ng-controller="body">
+    <div class="overlay" ng-hide="isLoaded">
+        <div class="loading">
+            <h1><i class="fa fa-refresh pulse-rotate"></i>Loading</h1>
+        </div>
+    </div>
+    <div id="page" layout="row">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar class="md-toolbar-tools">
+                <a href="/">
+                    <h1>Quotr</h1>
+                </a>
+            </md-toolbar>
+            <md-content class="md-padding">
+              <a href="quotr/my-quotes">
+                <h1>My Quotes</h1>
+              </a>
+            </md-content>
+        </md-sidenav>
+        <md-content id="page-content">
+            <md-toolbar>
+                <h2 class="md-toolbar-tools">
+                    <md-button hide-gt-md ng-click="openLeftMenu()">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </md-button>
+                    <span>{{title}}</span>
+                </h2>
+                <md-button class="md-fab md-accent" ng-show="toolbarFab" aria-label="Eat cake"  ng-click="toolbarFab.click()" ng-href="{{toolbarFab.href}}">
+                    <i class="{{toolbarFab.icon}}"></i>
+                </md-button>
+            </md-toolbar>
+            <div id="page-view" class="at-view-slide-in-right at-view-slide-out-right" ng-view></div>
+        </md-content>
+    </div>
+</body>
+</html>

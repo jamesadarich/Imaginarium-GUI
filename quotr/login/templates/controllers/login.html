@@ -1,0 +1,13 @@
+﻿<div class="md-whiteframe-z1">
+    <md-toolbar>
+        <h1 class="md-toolbar-tools">Login</h1>
+    </md-toolbar>
+    <md-content class="md-padding">
+        <form>
+            <md-text-float id="username" ng-model="username" label="Username"></md-text-float>
+            <md-text-float id="password" ng-model="password" label="Password" type="password"></md-text-float>
+            <md-button id="login" class="md-raised md-accent" ng-click="login()" ng-disabled="attemptingLogin">Login</md-button>
+            <md-progress-linear md-mode="indeterminate" ng-show="attemptingLogin"></md-progress-linear>
+        </form>
+    </md-content>
+</div>

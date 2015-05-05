@@ -29,6 +29,11 @@ define(['app'], function (app) {
                         { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } })
             .success(function (createdPlayer) {
                 player.editing = false;
+            })
+            .error(function(data, status) {
+              if (status === 401){
+                app.routeToLogin();
+              }
             });
         }
 
@@ -37,6 +42,11 @@ define(['app'], function (app) {
                         { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } })
             .success(function () {
                 $scope.players.pop(player);
+            })
+            .error(function(data, status) {
+              if (status === 401){
+                app.routeToLogin();
+              }
             });
         }
 
@@ -47,6 +57,11 @@ define(['app'], function (app) {
                         { headers: { 'Authorization': app.token.token_type + ' ' + app.token.access_token } })
             .success(function (createdPlayer) {
                 $scope.players.push(createdPlayer);
+            })
+            .error(function(data, status) {
+              if (status === 401){
+                app.routeToLogin();
+              }
             });
         }
 

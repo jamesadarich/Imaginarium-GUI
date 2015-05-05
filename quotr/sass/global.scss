@@ -1,0 +1,18 @@
+@import 'global/loading';
+@import 'global/overlay';
+@import 'global/page';
+@import 'global/pulse-rotate-animation';
+@import 'global/view-animation';
+@import 'global/toolbar';
+
+#generate-teams {
+  width: 100%;
+}
+
+#team-one {
+  text-align: center;
+}
+
+#team-two {
+  text-align: center;
+}

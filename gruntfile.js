@@ -20,6 +20,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'team-builder/css/global.css': 'team-builder/sass/global.scss',
+  				'quotr/css/global.css': 'quotr/sass/global.scss',
           'css/article.css': 'sass/article.scss'
 				}
 			}

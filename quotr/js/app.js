@@ -112,43 +112,29 @@ define(['angularAMD', 'angularMaterial', 'angularRoute'], function (angularAMD) 
 
     app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
 
-        $routeProvider.when("/team-builder/", angularAMD.route({
-            templateUrl: 'team-builder/templates/controllers/dashboard.html',
+        $routeProvider.when("/quotr/", angularAMD.route({
+            templateUrl: 'quotr/templates/controllers/dashboard.html',
             controller: 'dashboard',
             controllerUrl: 'controllers/dashboard'
         }))
-        .when("/team-builder/matches", angularAMD.route({
-            templateUrl: 'team-builder/templates/controllers/matches.html',
-            controller: 'matches',
-            controllerUrl: 'controllers/matches'
-        }))
-        .when("/team-builder/players", angularAMD.route({
-            templateUrl: 'team-builder/templates/controllers/players.html',
-            controller: 'players',
-            controllerUrl: 'controllers/players'
-        }))
-        .when("/team-builder/create-match", angularAMD.route({
-            templateUrl: 'team-builder/templates/controllers/create-match.html',
-            controller: 'create-match',
-            controllerUrl: 'controllers/create-match'
+        .when("/quotr/my-quotes", angularAMD.route({
+            templateUrl: 'quotr/templates/controllers/my-quotes.html',
+            controller: 'my-quotes',
+            controllerUrl: 'controllers/my-quotes'
         }))
         .otherwise(angularAMD.route({
-            templateUrl: 'team-builder/templates/controllers/file-not-found.html',
+            templateUrl: 'quotr/templates/controllers/file-not-found.html',
             controller: 'file-not-found',
             controllerUrl: 'controllers/file-not-found'
         }));
 
 
         $mdThemingProvider.theme('default')
-            .primaryPalette('deep-purple')
-            .accentPalette('deep-orange');
+            .primaryPalette('pink')
+            .accentPalette('indigo');
 
         $locationProvider.html5Mode(true);
     });
-
-    app.routeToLogin = function (){
-      window.location.href = '/team-builder/login';
-    }
 
     var bootstrappedApp = angularAMD.bootstrap(app);
     bootstrappedApp.apiUrl = 'http://api.imaginarium.getsett.net';
